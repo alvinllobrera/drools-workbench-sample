@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2015, CloudSherpas Incorporated. All rights reserved.
  */
-package com.cloudsherpas.courseadvisor.facts;
+package com.cloudsherpas.courseadvisor.commons.facts;
 
 import java.util.ArrayList;
 import java.util.List;

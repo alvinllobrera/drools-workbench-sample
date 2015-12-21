@@ -1,6 +1,6 @@
-import com.cloudsherpas.courseadvisor.facts.SubjectPreference;
-import com.cloudsherpas.courseadvisor.facts.CourseSuggestion;
-import com.cloudsherpas.courseadvisor.util.CourseFactory;
+import com.cloudsherpas.courseadvisor.commons.facts.SubjectPreference;
+import com.cloudsherpas.courseadvisor.commons.facts.CourseSuggestion;
+import com.cloudsherpas.courseadvisor.commons.util.CourseFactory;
 
 global CourseSuggestion suggestions;
 

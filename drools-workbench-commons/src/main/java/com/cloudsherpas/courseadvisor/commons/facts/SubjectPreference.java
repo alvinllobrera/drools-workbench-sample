@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2015, CloudSherpas Incorporated. All rights reserved.
  */
-package com.cloudsherpas.courseadvisor.facts;
+package com.cloudsherpas.courseadvisor.commons.facts;
 
 public class SubjectPreference {
     private String subjectCode;

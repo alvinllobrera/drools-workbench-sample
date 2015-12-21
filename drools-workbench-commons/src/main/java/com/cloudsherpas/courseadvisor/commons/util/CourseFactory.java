@@ -1,9 +1,9 @@
 /*
  * Copyright (c) 2015, CloudSherpas Incorporated. All rights reserved.
  */
-package com.cloudsherpas.courseadvisor.util;
+package com.cloudsherpas.courseadvisor.commons.util;
 
-import com.cloudsherpas.courseadvisor.facts.Course;
+import com.cloudsherpas.courseadvisor.commons.facts.Course;
 
 public class CourseFactory {
 
