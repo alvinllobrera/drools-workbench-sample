@@ -1,0 +1,26 @@
+import com.cloudsherpas.courseadvisor.facts.SubjectPreference;
+import com.cloudsherpas.courseadvisor.facts.CourseSuggestion;
+import com.cloudsherpas.courseadvisor.util.CourseFactory;
+
+global CourseSuggestion suggestions;
+
+rule "Suggest Accountancy" when
+    SubjectPreference( subjectCode == "MATH", rating >= 8 )
+    SubjectPreference( subjectCode == "ECONOMICS", rating >= 5)
+then
+    suggestions.addCourseSuggestion(CourseFactory.createCourse("BSA"));
+end
+
+rule "Suggest Computer Science" when
+    SubjectPreference( subjectCode == "MATH", rating >= 7)
+    SubjectPreference( subjectCode == "COMPUTER", rating >= 7)
+then
+    suggestions.addCourseSuggestion(CourseFactory.createCourse("BSCS"));
+end
+
+rule "Suggest Physics" when
+    SubjectPreference( subjectCode == "MATH", rating >= 7)
+    SubjectPreference( subjectCode == "SCIENCE", rating >= 7)
+then
+    suggestions.addCourseSuggestion(CourseFactory.createCourse("Physics"));
+end
