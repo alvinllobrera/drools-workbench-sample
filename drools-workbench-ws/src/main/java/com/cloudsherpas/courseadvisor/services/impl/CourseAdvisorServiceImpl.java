@@ -3,8 +3,8 @@
  */
 package com.cloudsherpas.courseadvisor.services.impl;
 
-import com.cloudsherpas.courseadvisor.facts.CourseSuggestion;
-import com.cloudsherpas.courseadvisor.facts.SubjectPreference;
+import com.cloudsherpas.courseadvisor.commons.facts.CourseSuggestion;
+import com.cloudsherpas.courseadvisor.commons.facts.SubjectPreference;
 import com.cloudsherpas.courseadvisor.services.CourseAdvisorService;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.StatelessKieSession;
@@ -22,7 +22,7 @@ public class CourseAdvisorServiceImpl implements CourseAdvisorService {
     @Override
     public CourseSuggestion suggestCourses(List<SubjectPreference> subjectPreferences) {
         CourseSuggestion courseSuggestion = new CourseSuggestion();
-        StatelessKieSession statelessKieSession = kieContainer.newStatelessKieSession("CourseAdvisorKS");
+        StatelessKieSession statelessKieSession = kieContainer.newStatelessKieSession();
         statelessKieSession.setGlobal("suggestions", courseSuggestion);
         statelessKieSession.execute(subjectPreferences);
         return courseSuggestion;

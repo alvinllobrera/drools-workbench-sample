@@ -24,7 +24,7 @@
     <dependencies>
         <dependency>
             <groupId>com.cloudsherpas</groupId>
-            <artifactId>drools-sample-commons</artifactId>
+            <artifactId>drools-workbench-commons</artifactId>
             <version>${commons.version}</version>
         </dependency>
         <!-- Spring Dependencies -->

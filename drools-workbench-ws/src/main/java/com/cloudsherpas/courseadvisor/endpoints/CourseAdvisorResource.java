@@ -3,8 +3,8 @@
  */
 package com.cloudsherpas.courseadvisor.endpoints;
 
-import com.cloudsherpas.courseadvisor.facts.CourseSuggestion;
-import com.cloudsherpas.courseadvisor.facts.SubjectPreference;
+import com.cloudsherpas.courseadvisor.commons.facts.CourseSuggestion;
+import com.cloudsherpas.courseadvisor.commons.facts.SubjectPreference;
 import com.cloudsherpas.courseadvisor.services.CourseAdvisorService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

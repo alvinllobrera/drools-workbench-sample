@@ -3,8 +3,8 @@
  */
 package com.cloudsherpas.courseadvisor.services;
 
-import com.cloudsherpas.courseadvisor.facts.CourseSuggestion;
-import com.cloudsherpas.courseadvisor.facts.SubjectPreference;
+import com.cloudsherpas.courseadvisor.commons.facts.CourseSuggestion;
+import com.cloudsherpas.courseadvisor.commons.facts.SubjectPreference;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
