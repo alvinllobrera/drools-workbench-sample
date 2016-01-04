@@ -33,17 +33,18 @@ public class DroolsConfiguration {
                 env.getProperty(DroolsConfigConstants.WB_ARTIFACT_PATH) +
                 env.getProperty(DroolsConfigConstants.WB_ARTIFACT_NAME);
 
-        KieServices ks = KieServices.Factory.get();
-        KieRepository repo = ks.getRepository();
-        KieResources resources = ks.getResources();
-        UrlResource urlResource = (UrlResource) ks.getResources()
+        final KieServices kieServices = KieServices.Factory.get();
+        final KieRepository kieRepo = kieServices.getRepository();
+        final KieResources kieResources = kieServices.getResources();
+        final UrlResource urlResource = (UrlResource) kieServices.getResources()
                 .newUrlResource(url);
         urlResource.setUsername(env.getProperty(DroolsConfigConstants.WB_USERNAME));
         urlResource.setPassword(env.getProperty(DroolsConfigConstants.WB_PASSWORD));
         urlResource.setBasicAuthentication("enabled");
-        InputStream is = urlResource.getInputStream();
-        KieModule k = repo.addKieModule(resources.newInputStreamResource(is));
 
-        return ks.newKieContainer(k.getReleaseId());
+        final InputStream is = urlResource.getInputStream();
+        final KieModule kieModule = kieRepo.addKieModule(kieResources.newInputStreamResource(is));
+
+        return kieServices.newKieContainer(kieModule.getReleaseId());
     }
 }

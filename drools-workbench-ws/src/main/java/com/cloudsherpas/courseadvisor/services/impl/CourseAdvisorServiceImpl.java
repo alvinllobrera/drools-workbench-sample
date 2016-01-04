@@ -21,7 +21,7 @@ public class CourseAdvisorServiceImpl implements CourseAdvisorService {
 
     @Override
     public CourseSuggestion suggestCourses(List<SubjectPreference> subjectPreferences) {
-        CourseSuggestion courseSuggestion = new CourseSuggestion();
+        final CourseSuggestion courseSuggestion = new CourseSuggestion();
         StatelessKieSession statelessKieSession = kieContainer.newStatelessKieSession();
         statelessKieSession.setGlobal("suggestions", courseSuggestion);
         statelessKieSession.execute(subjectPreferences);
