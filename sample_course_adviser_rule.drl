@@ -2,7 +2,7 @@ package com.cloudsherpas.drools_workbench_sample;
 
 import com.cloudsherpas.courseadvisor.commons.facts.SubjectPreference;
 import com.cloudsherpas.courseadvisor.commons.facts.CourseSuggestion;
-import com.cloudsherpas.courseadvisor.commons.util.CourseFactory;
+import com.cloudsherpas.courseadvisor.commons.facts.Course;
 
 global CourseSuggestion suggestions;
 
@@ -10,19 +10,19 @@ rule "Suggest Accountancy" when
     SubjectPreference( subjectCode == "MATH", rating >= 8 )
     SubjectPreference( subjectCode == "ECONOMICS", rating >= 5)
 then
-    suggestions.addCourseSuggestion(CourseFactory.createCourse("BSA"));
+    suggestions.addCourseSuggestion(new Course("BSA", "BS in Accountancy"));
 end
 
 rule "Suggest Computer Science" when
     SubjectPreference( subjectCode == "MATH", rating >= 7)
     SubjectPreference( subjectCode == "COMPUTER", rating >= 7)
 then
-    suggestions.addCourseSuggestion(CourseFactory.createCourse("BSCS"));
+    suggestions.addCourseSuggestion(new Course("BSCS", "BS in Computer Science"));
 end
 
 rule "Suggest Physics" when
     SubjectPreference( subjectCode == "MATH", rating >= 7)
     SubjectPreference( subjectCode == "SCIENCE", rating >= 7)
 then
-    suggestions.addCourseSuggestion(CourseFactory.createCourse("Physics"));
+    suggestions.addCourseSuggestion(new Course("Physics", "BS in Physics"));
 end

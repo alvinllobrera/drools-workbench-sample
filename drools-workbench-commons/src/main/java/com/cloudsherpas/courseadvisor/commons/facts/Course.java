@@ -7,6 +7,11 @@ public class Course {
     String code;
     String description;
 
+    public Course(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
+
     public String getCode() {
         return code;
     }
